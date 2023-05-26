@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($_SESSION['usuari'])){
-        header("location: main.php");
+        session_destroy();
     }
 ?>
 
@@ -40,8 +40,7 @@
             <!--Formulari de login i registre-->
             <!--Login-->
             <div class="contenedor_login-register">
-                <form action="php/login_usuari.php" method="POST"
-                class="formulari_login">
+                <form action="php/login_usuari.php" method="POST" class="formulari_login">
                     <h2>Iniciar sessio</h2>
                     <input type="text" placeholder="Correu Electronic" name="correu">
                     <input type="password" placeholder="Contrasenya" name="contrasenya">
