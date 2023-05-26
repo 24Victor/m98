@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-// Verificar si el usuario tiene una sesión activa
+// Verificar si l'usuari té una sessió activa
 if (!isset($_SESSION['usuari'])) {
-    header("Location: ../index.php"); // Redirigir a la página de inicio de sesión si no hay sesión activa
+    header("Location: ../index.php"); // Redirigir a la pàgina d'inici de sessió si no hi ha sessió activa
     exit();
 }
 
@@ -17,5 +17,13 @@ if (!isset($_SESSION['usuari'])) {
 <body>
     <h1>Error de Rol</h1>
     <p>No tens permisos per a accedir a aquesta pagina.</p>
+
+    <a href="php/tanca_sessio.php" class="logout-link">Tanca Sessió</a>
+    <script>
+        document.querySelector("a[href='php/tanca_sessio.php']").addEventListener("click", function(e) {
+            e.preventDefault();
+            window.location.href = "../index.php";
+        });
+    </script>
 </body>
 </html>

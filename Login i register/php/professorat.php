@@ -7,17 +7,17 @@ if (!isset($_SESSION['usuari'])) {
     die();
 }
 
-// Establecer la conexión a la base de datos (suponiendo que ya tienes la conexión)
+// Establim la connexió amb la base de dades (suposant que ja tenim la connexió)
 include 'connexio.php';
-// Consulta para obtener el listado de portátiles por cada aula
+// Consulta per obtenir la llista de portàtils per a cada aula
 $queryPortatils = "SELECT aula, portatils FROM professorat";
 $resultPortatils = mysqli_query($conexio, $queryPortatils);
 
-// Consulta para obtener la lista de discos duros en incidencia
+// Consulta per obtenir la llista de discs durs en incidència
 $queryDiscsIncidencia = "SELECT aula, discs_incidencia FROM professorat WHERE discs_incidencia > 0";
 $resultDiscsIncidencia = mysqli_query($conexio, $queryDiscsIncidencia);
 
-// Recorrer los resultados y mostrar los listados
+// Recorrem els resultats i mostrem les llistes
 ?>
 
 <!DOCTYPE html>
